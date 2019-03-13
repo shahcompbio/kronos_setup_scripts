@@ -46,6 +46,7 @@ def get_filepath(df, tantalus_api, col_name):
             dataset = sequence_dataset
         elif len(sequence_dataset["sequence_lanes"]) > most_lanes:
             dataset = sequence_dataset
+            most_lanes = len(sequence_dataset["sequence_lanes"])
 
     if not dataset:
         logging.error("No dataset found for {}".format(df["sample_id"]))
